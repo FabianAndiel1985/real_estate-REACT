@@ -28,9 +28,20 @@ class App extends Component {
        daytime="evening";
     }
 
+    else{
+      daytime="morning";
+    }
+
     this.setState({
         daytime:daytime
       })
+  }
+
+  getFontColour() {
+      if (this.state.daytime == "morning" || this.state.daytime == "afternoon" ) {
+        return "green";
+      }
+      return "white";
   }
 
 
@@ -41,34 +52,11 @@ class App extends Component {
 
 
   render() {
-    
-    let morningStyle = {
-      color: "green"
-    }
-
-
-//     getBackgroundColor(status) {
-//     if (status === 'approved') {
-//         return 'blue';
-//     }
-//     if (status === 'pending') {
-//         return 'red';
-//     }
-//     return 'black';
-// }
-
-
-
-// render() {
-//     // ...
-
-//     return (
-//         <div style={{ 'backgroundColor': this.getBackgroundColor(status) }}></div>
-//     );
-// }
-
-    return (
-      <h1 style={}  className="text-center"> Good {this.state.daytime} </h1>
+   
+    return ( 
+      <div>
+        <h1 style={{'color': this.getFontColour()}}  className="text-center"> Good {this.state.daytime} </h1>
+      </div>
     );
   }
 }
