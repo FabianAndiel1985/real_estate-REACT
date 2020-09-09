@@ -2,6 +2,14 @@ import React, {Component} from 'react';
 
 class Team extends Component {
 
+
+  componentDidMount() {
+   
+    console.log(this.props.history);
+  }
+
+
+
 	 render() {
    
     return ( 

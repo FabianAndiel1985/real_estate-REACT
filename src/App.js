@@ -49,6 +49,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getGreeting();
+    console.log(this.props);
   }
 
 

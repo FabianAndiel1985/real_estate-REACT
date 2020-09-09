@@ -3,14 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {HashRouter, Route } from 'react-router-dom';
+import {HashRouter, Route, Switch } from 'react-router-dom';
 import Team from './components/team/team';
+import PageNotFound from './components/page-not-found/page-not-found';
 
 ReactDOM.render(
   <HashRouter>
+  <Switch>
     <Route exact={true} path="/" component={App}/>
     <Route path="/team" component={Team}/>
-    
+    <Route component={PageNotFound}/>
+   </Switch>
   </HashRouter>,
   document.getElementById('root')
 );
