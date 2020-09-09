@@ -1,6 +1,8 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
+import classes from './App.module.css';
+import welcomePic from './assets/images/welcomePic.jpg';
+import {Image} from 'react-bootstrap';
 
-import './App.css';
 
 class App extends Component {
 
@@ -56,6 +58,7 @@ class App extends Component {
     return ( 
       <div>
         <h1 style={{'color': this.getFontColour()}}  className="text-center"> Good {this.state.daytime} </h1>
+        <img src={require("./assets/images/welcomePic.jpg")}/>
       </div>
     );
   }
