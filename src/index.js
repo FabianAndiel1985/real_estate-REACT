@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {HashRouter, Route } from 'react-router-dom';
+import Team from './components/team/team';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <HashRouter>
+    <Route exact={true} path="/" component={App}/>
+    <Route path="/team" component={Team}/>
+    
+  </HashRouter>,
   document.getElementById('root')
 );
 
