@@ -7,6 +7,4 @@ function PageNotFound(props) {
   		<button onClick={props.history.goBack}> go back </button></div>)
 }
 
-
-
 export default PageNotFound;
