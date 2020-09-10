@@ -7,15 +7,18 @@ import {HashRouter, Route, Switch } from 'react-router-dom';
 import Team from './components/team/team';
 import PageNotFound from './components/page-not-found/page-not-found';
 import Footer from './components/footer/footer';
+import Navigation from './components/navigation/navigation';
+import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.render(
   <HashRouter>
-  <Switch>
-    <Route exact={true} path="/" component={App}/>
-    <Route path="/team" component={Team}/>
-    <Route component={PageNotFound}/>
-   </Switch>
-   <Footer> </Footer>
+  <Navigation/>
+	  <Switch>
+	    <Route exact={true} path="/" component={App}/>
+	    <Route path="/team" component={Team}/>
+	    <Route component={PageNotFound}/>
+	  </Switch>
+   <Footer/>
   </HashRouter>,
   document.getElementById('root')
 );
