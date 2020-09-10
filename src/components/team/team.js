@@ -4,6 +4,8 @@ class Team extends Component {
 
 
   componentDidMount() {
+
+  	
   }
 
 	 render() {
