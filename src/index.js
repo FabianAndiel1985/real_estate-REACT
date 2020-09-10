@@ -9,6 +9,9 @@ import PageNotFound from './components/page-not-found/page-not-found';
 import Footer from './components/footer/footer';
 import Navigation from './components/navigation/navigation';
 import "bootstrap/dist/css/bootstrap.css";
+import axios from 'axios';
+
+axios.defaults.baseURL = 'https://realestate-ec9a6.firebaseio.com/';
 
 ReactDOM.render(
   <HashRouter>
