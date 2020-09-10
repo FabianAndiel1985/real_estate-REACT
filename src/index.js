@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import {HashRouter, Route, Switch } from 'react-router-dom';
 import Team from './components/team/team';
 import PageNotFound from './components/page-not-found/page-not-found';
+import Footer from './components/footer/footer';
 
 ReactDOM.render(
   <HashRouter>
@@ -14,6 +15,7 @@ ReactDOM.render(
     <Route path="/team" component={Team}/>
     <Route component={PageNotFound}/>
    </Switch>
+   <Footer> </Footer>
   </HashRouter>,
   document.getElementById('root')
 );
