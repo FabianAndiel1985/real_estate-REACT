@@ -21,7 +21,7 @@ ReactDOM.render(
 	    <Route path="/team" component={Team}/>
 	    <Route component={PageNotFound}/>
 	  </Switch>
-   <Footer/>
+   <Footer creator="Fabian Andiel"/>
   </HashRouter>,
   document.getElementById('root')
 );
