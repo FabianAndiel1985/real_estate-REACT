@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import TeamMemberDetail from './team-member-detail/team-member-detail';
 import {Container, Row, Col} from 'react-bootstrap';
+import axiosErrorHandling from '../higher-order-component/axios-error-handling';
 
 class Team extends Component {
 
@@ -27,13 +28,13 @@ class Team extends Component {
 
     componentDidMount() {
         axios.get('/team.json').then((response) => {
-        	console.log(response);
             let teamMembers = this.transformResponseToObjectArray(response);
             this.setState({
                 teamMembers: teamMembers
             })
-        }).catch((error) => {
-            console.log(error.message)
+        })
+        .catch((error) => {
+            console.log(error.message);
         });
     }
    
@@ -55,7 +56,6 @@ class Team extends Component {
 	       						job={item.job}
 	       					/> 
        					</Col>
-      
        					)	 					
        				}
        				)
@@ -70,4 +70,4 @@ class Team extends Component {
 
 }
 
-export default Team;
+export default axiosErrorHandling(Team,axios);

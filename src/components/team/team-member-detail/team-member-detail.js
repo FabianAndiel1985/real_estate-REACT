@@ -5,7 +5,6 @@ import Table from 'react-bootstrap/Table';
 import Pic from '../../../assets/images/welcomePic.jpg';
 
 function teamMemberDetail(props) {
-	console.log(props);
 	return(
 			<Card style={{ width: '18rem' }}>
 			  <Card.Img variant="top" src={require("../../../assets/images/welcomePic.jpg")} />
