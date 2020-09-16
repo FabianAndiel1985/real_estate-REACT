@@ -10,6 +10,7 @@ import Footer from './components/footer/footer';
 import Navigation from './components/navigation/navigation';
 import "bootstrap/dist/css/bootstrap.css";
 import axios from 'axios';
+import DateContext from './components/higher-order-component/date-context';
 
 axios.defaults.baseURL = 'https://realestate-ec9a6.firebaseio.com/';
 
@@ -18,7 +19,9 @@ ReactDOM.render(
   <Navigation/>
 	  <Switch>
 	    <Route exact={true} path="/" component={App}/>
-	    <Route path="/team" component={Team}/>
+	    <DateContext.Provider>
+	    	<Route path="/team" component={Team}/>
+	    </DateContext.Provider>
 	    <Route component={PageNotFound}/>
 	  </Switch>
    <Footer creator="Fabian Andiel"/>

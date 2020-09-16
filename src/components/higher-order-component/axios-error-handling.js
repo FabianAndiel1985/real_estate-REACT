@@ -9,7 +9,7 @@ const axiosErrorHandling = (WrappedComponent,axios) => {
 
 		axios.interceptors.request.use(function (request) 
 		{
-			console.log("Works");
+
 	    	return request;
 	  	}, 
 	  	function (error) {
@@ -30,7 +30,6 @@ const axiosErrorHandling = (WrappedComponent,axios) => {
     render() {
       return (
       		<Fragment>
-      			<h1>Works</h1>
       			<WrappedComponent />
       		</Fragment>
       		)

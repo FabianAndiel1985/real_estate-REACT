@@ -3,14 +3,19 @@ import axios from 'axios';
 import TeamMemberDetail from './team-member-detail/team-member-detail';
 import {Container, Row, Col} from 'react-bootstrap';
 import axiosErrorHandling from '../higher-order-component/axios-error-handling';
+import DateContext from '../higher-order-component/date-context';
 
-class Team extends Component {
 
-    constructor(props) {
+
+class Team extends Component {  
+    
+
+    constructor(props,context) {
         super(props);
         this.state = {
             teamMembers: "",
         }
+        this.date = DateContext._currentValue2;    
     }
 
     transformResponseToObjectArray(response) {
@@ -43,7 +48,9 @@ class Team extends Component {
 
         return (
             <div>
-        		<h1> Im the team component</h1>
+        		<h1> Im the team component as of {this.date} </h1>
+
+
         		<Container>
         		<Row>
        			{this.state.teamMembers ? this.state.teamMembers.map(
@@ -68,5 +75,6 @@ class Team extends Component {
     }
 
 }
+
 
 export default axiosErrorHandling(Team,axios);
