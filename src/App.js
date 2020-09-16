@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import classes from './App.module.css';
 import welcomePic from './assets/images/welcomePic.jpg';
-import {Image} from 'react-bootstrap';
-import {Modal} from 'react-bootstrap';
+import {Image,Modal,InputGroup,FormControl,Button} from 'react-bootstrap';
+
 
 
 class App extends Component {
@@ -85,10 +85,34 @@ class App extends Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-            Large Modal
+           Login Data
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>...</Modal.Body>
+        <Modal.Body>
+
+          <label htmlFor="username"> Username</label>
+          <InputGroup className="mb-3">
+            <FormControl
+              aria-label="Default"
+              aria-describedby="inputGroup-sizing-default"
+              id="username"
+            />
+          </InputGroup>
+
+
+          <label htmlFor="password"> Password</label>
+          <InputGroup className="mb-3">
+            <FormControl
+              aria-label="Default"
+              aria-describedby="inputGroup-sizing-default"
+              type="password"
+              id="password"
+            />
+          </InputGroup>
+
+          <Button variant="success">Login</Button>
+
+        </Modal.Body>
       </Modal>
 
 
