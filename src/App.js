@@ -13,6 +13,15 @@ class App extends Component {
       daytime:"morning",
       lgShow:false
     }
+
+    this.setUsernameRef =  (element) => {
+      this.username = element;
+    }
+
+      this.setPasswordRef =  (element) => {
+      this.password = element;
+    }
+
   }
 
   getTime() {
@@ -50,7 +59,7 @@ class App extends Component {
   }
 
   setLgShow() {
-    if(this.state.lgShow === false) 
+    if(this.state.lgShow == false) 
     {
       this.setState({
         lgShow:true
@@ -64,6 +73,13 @@ class App extends Component {
     }
   }
 
+  onFocus(element) {
+    element.style.border = "3px solid green";
+  }
+
+  onBlur(element) {
+    element.style.border = "";
+  }
 
   componentDidMount() {
     this.getGreeting();
@@ -96,6 +112,9 @@ class App extends Component {
               aria-label="Default"
               aria-describedby="inputGroup-sizing-default"
               id="username"
+              ref={this.setUsernameRef}
+              onFocus = {()=>this.onFocus(this.username)}
+              onBlur= {()=>this.onBlur(this.username) }
             />
           </InputGroup>
 
@@ -107,16 +126,16 @@ class App extends Component {
               aria-describedby="inputGroup-sizing-default"
               type="password"
               id="password"
+              ref={this.setPasswordRef}
+              onFocus = {()=>this.onFocus(this.password)}
+              onBlur= {()=>this.onBlur(this.password)}
             />
           </InputGroup>
 
-          <Button variant="success">Login</Button>
+          <Button onClick={() => this.setLgShow()} variant="success">Login</Button>
 
         </Modal.Body>
       </Modal>
-
-
-
       </div>
     );
   }
