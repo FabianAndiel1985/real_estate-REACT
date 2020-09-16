@@ -8,3 +8,9 @@ img {
 	margin:0 auto 0 auto;
 	border-radius:70%;
 }
+
+.adminLogin {
+	cursor: pointer;
+	text-decoration: underline !important;
+	color:black;
+}

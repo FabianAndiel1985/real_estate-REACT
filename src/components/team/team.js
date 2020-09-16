@@ -56,12 +56,11 @@ class Team extends Component {
 	       						job={item.job}
 	       					/> 
        					</Col>
-       					)	 					
+       					)	
+                 				
        				}
        				)
-
        			:null}
-        		<TeamMemberDetail/>
         		</Row>
         		</Container>
       		</div>

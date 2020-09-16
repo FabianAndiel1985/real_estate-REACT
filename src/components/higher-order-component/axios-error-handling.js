@@ -1,5 +1,5 @@
 import React, {Component,Fragment} from 'react';
-import axios from 'axios';
+import axios,{interceptors} from 'axios';
 
 const axiosErrorHandling = (WrappedComponent,axios) => {
 

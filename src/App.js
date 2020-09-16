@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import classes from './App.module.css';
 import welcomePic from './assets/images/welcomePic.jpg';
 import {Image} from 'react-bootstrap';
+import {Modal} from 'react-bootstrap';
 
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       daytime:"morning",
+      lgShow:false
     }
   }
 
@@ -39,6 +41,7 @@ class App extends Component {
       })
   }
 
+
   getFontColour() {
       if (this.state.daytime == "morning" || this.state.daytime == "afternoon" ) {
         return "green";
@@ -46,13 +49,25 @@ class App extends Component {
       return "white";
   }
 
+  setLgShow() {
+    if(this.state.lgShow === false) 
+    {
+      this.setState({
+        lgShow:true
+      })
+    }
 
-  componentDidMount() {
-    this.getGreeting();
-    console.log(this.props);
+    else {
+      this.setState({
+        lgShow:false
+      })
+    }
   }
 
 
+  componentDidMount() {
+    this.getGreeting();
+  }
 
   render() {
    
@@ -60,6 +75,24 @@ class App extends Component {
       <div>
         <h1 style={{'color': this.getFontColour()}}  className="text-center"> Good {this.state.daytime} </h1>
         <img src={require("./assets/images/welcomePic.jpg")}/>
+        <a onClick={() => this.setLgShow()} className={classes.adminLogin}>Login as an Administrator</a>
+
+       <Modal
+        size="lg"
+        show={this.state.lgShow}
+        onHide={() => this.setLgShow()}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+            Large Modal
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>...</Modal.Body>
+      </Modal>
+
+
+
       </div>
     );
   }
