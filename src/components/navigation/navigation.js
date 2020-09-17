@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -9,18 +9,22 @@ import Button from 'react-bootstrap/Button';
 
 
 function Navigation(props) {
-  return (
-	<Navbar bg="light" expand="lg">
+    return (
+        <Navbar bg="light" expand="lg">
 	  <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
 	  <Navbar.Toggle aria-controls="basic-navbar-nav" />
 	  <Navbar.Collapse id="basic-navbar-nav">
 	    <Nav className="mr-auto">
 	      <Nav.Link href="/">Home</Nav.Link>
 	      <Nav.Link href="#team">Team</Nav.Link>
+	  <NavDropdown title="Shop" id="basic-nav-dropdown">
+        <NavDropdown.Item href="#shopping-cart">shopping cart</NavDropdown.Item>
+        <NavDropdown.Item href="#products">products</NavDropdown.Item>
+      </NavDropdown>
 	    </Nav>
 	  </Navbar.Collapse>
 	</Navbar>
-  	)
+    )
 }
 
 export default Navigation;

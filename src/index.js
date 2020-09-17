@@ -11,6 +11,10 @@ import Navigation from './components/navigation/navigation';
 import "bootstrap/dist/css/bootstrap.css";
 import axios from 'axios';
 import DateContext from './components/higher-order-component/date-context';
+import Products from './components/products/products';
+import ShoppingCart from './components/shopping-cart/shopping-cart';
+
+
 
 axios.defaults.baseURL = 'https://realestate-ec9a6.firebaseio.com/';
 
@@ -18,10 +22,14 @@ ReactDOM.render(
   <HashRouter>
   <Navigation/>
 	  <Switch>
-	    <Route exact={true} path="/" component={App}/>
-	    <DateContext.Provider>
-	    	<Route path="/team" component={Team}/>
-	    </DateContext.Provider>
+	    <Route exact={true} path="/" component={App}/>   
+	    <Route path="/team">
+	    	<DateContext.Provider>
+	    		<Team/>
+	    	</DateContext.Provider>
+	    </Route>
+	    <Route path="/products" component={Products}/>
+	    <Route path="/shopping-cart" component={ShoppingCart}/>
 	    <Route component={PageNotFound}/>
 	  </Switch>
    <Footer creator="Fabian Andiel"/>
