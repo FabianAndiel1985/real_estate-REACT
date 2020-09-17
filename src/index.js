@@ -13,10 +13,14 @@ import axios from 'axios';
 import DateContext from './components/higher-order-component/date-context';
 import Products from './components/products/products';
 import ShoppingCart from './components/shopping-cart/shopping-cart';
-
+import counter from './reducer/index';
+import {Provider} from 'react-redux';
+import { createStore } from 'redux';
 
 
 axios.defaults.baseURL = 'https://realestate-ec9a6.firebaseio.com/';
+
+let store = createStore(counter);
 
 ReactDOM.render(
   <HashRouter>
@@ -28,8 +32,10 @@ ReactDOM.render(
 	    		<Team/>
 	    	</DateContext.Provider>
 	    </Route>
-	    <Route path="/products" component={Products}/>
-	    <Route path="/shopping-cart" component={ShoppingCart}/>
+	    <Provider store={store}>
+		    <Route path="/products" component={Products}/>
+		    <Route path="/shopping-cart" component={ShoppingCart}/>
+	    </Provider>
 	    <Route component={PageNotFound}/>
 	  </Switch>
    <Footer creator="Fabian Andiel"/>
