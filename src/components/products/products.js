@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import {addProduct} from '../../actions/actions';
+import {Table} from 'react-bootstrap';
 
 class Products extends React.Component {
 	
   constructor(props){
 		super(props);
     this.state = {
-            producs: 
+            products: 
             [
               {id:"0",name:"product0",price:4.99,amount:1},
               {id:"1",name:"product1",price:7.99,amount:1},
@@ -21,19 +22,47 @@ class Products extends React.Component {
 
             ],
         }
-	}
+    }
 
-
+   
+   
   render() {
-
+    
     return (
     	<div>
-    	<button onClick={this.props.onClick} >Hello</button>
+    
     	<p> {this.props.value}</p>
+      <Table>
+        <thead>
+          <tr>
+            <th>number</th>
+            <th>product</th>
+            <th>price </th>
+            <th>actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        {this.state.products ? this.state.products.map(
+               (item,index)=>{
+                 return (
+                 <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.price}</td>
+                  <td> <button onClick={this.props.onClick}> add to cart</button> </td>
+                </tr>
+                )           
+                }  
+        )
+             :null}
+          
+        </tbody>
+      </Table>
     	</div>);
   }
-
 }
+
+
 
 const mapDispatchToProps = {
       onClick:addProduct
