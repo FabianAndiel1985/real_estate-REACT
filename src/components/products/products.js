@@ -10,15 +10,15 @@ class Products extends React.Component {
     this.state = {
             products: 
             [
-              {id:"0",name:"product0",price:4.99,amount:1},
-              {id:"1",name:"product1",price:7.99,amount:1},
-              {id:"2",name:"product2",price:3.99,amount:1},
-              {id:"3",name:"product3",price:7.20,amount:1},
-              {id:"4",name:"product4",price:4.99,amount:1},
-              {id:"5",name:"product5",price:1.39,amount:1},
-              {id:"6",name:"product6",price:4.99,amount:1},
-              {id:"7",name:"product7",price:2.99,amount:1},
-              {id:"8",name:"producz8",price:4.99,amount:1},
+              {id:"0",name:"product0",price:4.99},
+              {id:"1",name:"product1",price:7.99},
+              {id:"2",name:"product2",price:3.99},
+              {id:"3",name:"product3",price:7.20},
+              {id:"4",name:"product4",price:4.99},
+              {id:"5",name:"product5",price:1.39},
+              {id:"6",name:"product6",price:4.99},
+              {id:"7",name:"product7",price:2.99},
+              {id:"8",name:"producz8",price:4.99},
 
             ],
         }
@@ -49,7 +49,7 @@ class Products extends React.Component {
                   <td>{item.id}</td>
                   <td>{item.name}</td>
                   <td>{item.price}</td>
-                  <td> <button onClick={this.props.onClick}> add to cart</button> </td>
+                  <td> <button onClick={(event)=>this.props.onClick(event)}> add to cart</button> </td>
                 </tr>
                 )           
                 }  

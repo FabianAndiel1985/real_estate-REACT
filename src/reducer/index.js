@@ -1,8 +1,9 @@
-let initialState = [{ id: 0, name: "product1", price: 70.80 }];
+let initialState = [];
 
-function counter(state = 0, action) {
+function counter(state = initialState, action) {
 
     if (action.type == "INCREMENT") {
+    	console.log(action);
        state++;
     }
 
