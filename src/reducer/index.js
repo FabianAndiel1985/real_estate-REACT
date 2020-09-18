@@ -6,7 +6,6 @@ function counter(state = 0, action) {
        state++;
     }
 
-
     else if (action.type == "DECREMENT") {
 
     }
