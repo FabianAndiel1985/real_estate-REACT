@@ -69,11 +69,7 @@ const mapDispatchToProps = {
    }
 
 const mapStateToProps = 
-(state) => {
-  return {
-    value:state
-  }
-}
+null;
 
 let Products2 = connect(mapStateToProps,mapDispatchToProps)(Products);
 
