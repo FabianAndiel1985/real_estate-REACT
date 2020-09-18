@@ -18,3 +18,19 @@ export function increaseProductAmountAndPrice(state,action) {
     			} 			
     		})
 }
+
+export function decreaseOrRemoveProduct(state,item,action,index) {
+
+    if(item.amount>0) {
+                        item.amount--;
+                        item.price -= action.product.price;
+                    }
+
+                    if(item.amount ==0) {
+                        state.splice(index,1);
+                    }
+
+
+
+
+}
