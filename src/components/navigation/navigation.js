@@ -6,19 +6,20 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
+import styles from './navigation.module.css';
 
 
 function Navigation(props) {
     return (
         <Navbar bg="light" expand="lg">
-	  <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+	  <Navbar.Brand href=""><img className={styles.navBrand} src={require("../../assets/images/logo.png")}/> </Navbar.Brand>
 	  <Navbar.Toggle aria-controls="basic-navbar-nav" />
 	  <Navbar.Collapse id="basic-navbar-nav">
 	    <Nav className="mr-auto">
-	      <Nav.Link href="/">Home</Nav.Link>
-	      <Nav.Link href="#team">Team</Nav.Link>
-	  <NavDropdown title="Shop" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#shopping-cart">shopping cart</NavDropdown.Item>
+	      <Nav.Link href="/" className={styles.navLink}>Home</Nav.Link>
+	      <Nav.Link href="#team" className={styles.navLink}>Team</Nav.Link>
+	  <NavDropdown className={styles.navLink} title="Shop" id="basic-nav-dropdown">
+        <NavDropdown.Item href="#shopping-cart" >shopping cart</NavDropdown.Item>
         <NavDropdown.Item href="#products">products</NavDropdown.Item>
       </NavDropdown>
 	    </Nav>
