@@ -9,7 +9,6 @@ function teamMemberDetail(props) {
 			<Card style={{ width: '18rem' }}>
 			  <Card.Img variant="top" src={require("../../../assets/images/welcomePic.jpg")} />
 			  <Card.Body>
-			    <Card.Text>
 			    <div>
 			      <Table>
 					  <thead>
@@ -30,7 +29,6 @@ function teamMemberDetail(props) {
 					  </tbody>
 					</Table>
 					</div>
-			    </Card.Text>
 			    <Button variant="primary"> Get details </Button>
 			  </Card.Body>
 			</Card>

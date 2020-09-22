@@ -56,7 +56,7 @@ class Team extends Component {
        			{this.state.teamMembers ? this.state.teamMembers.map(
        				(item,index)=>{
        					return (
-       					<Col xs={12} md={6} lg={4} className="mt-5 border">
+       					<Col key={item.id} xs={12} md={6} lg={4} className="mt-5 border">
 	       					<TeamMemberDetail
 	       						firstname={item.firstname}
 	       						lastname = {item.lastname}
