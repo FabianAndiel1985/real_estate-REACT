@@ -4,6 +4,7 @@ import TeamMemberDetail from './team-member-detail/team-member-detail';
 import {Container, Row, Col} from 'react-bootstrap';
 import axiosErrorHandling from '../higher-order-component/axios-error-handling';
 import DateContext from '../higher-order-component/date-context';
+import styles from './team.module.css';
 
 
 
@@ -47,20 +48,22 @@ class Team extends Component {
     render() {
 
         return (
-            <div>
-        		<h1> Im the team component as of {this.date} </h1>
+            <div className="pt-5">
+        		<h1 className={styles.heading}> Our team </h1>
+            <sub className={styles.sub}> as of {this.date} </sub>
 
 
-        		<Container>
+        		<Container className="mt-5" fluid style={{ padding: " 0 10% 0 10%" }}>
         		<Row>
        			{this.state.teamMembers ? this.state.teamMembers.map(
        				(item,index)=>{
        					return (
-       					<Col key={item.id} xs={12} md={6} lg={4} className="mt-5 border">
+       					<Col key={item.id} xs={12} s={12}  md={12} lg={6} xl={4} className="mt-5">
 	       					<TeamMemberDetail
 	       						firstname={item.firstname}
 	       						lastname = {item.lastname}
 	       						job={item.job}
+                    image={item.image}
 	       					/> 
        					</Col>
        					)	

@@ -3,11 +3,12 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import Pic from '../../../assets/images/welcomePic.jpg';
+import styles from './teamMemberDetail.module.css';
 
 function teamMemberDetail(props) {
 	return(
-			<Card style={{ width: '18rem' }}>
-			  <Card.Img variant="top" src={require("../../../assets/images/welcomePic.jpg")} />
+			<Card className={styles.card}>
+			  <Card.Img variant="top" src={require("../../../assets/images/"+props.image)} />
 			  <Card.Body>
 			    <div>
 			      <Table>
@@ -15,21 +16,21 @@ function teamMemberDetail(props) {
 					  </thead>
 					  <tbody>
 					    <tr>
-					      <th>firstname </th>
-					      <td>{props.firstname}</td>
+					      <th className={styles.cardHeading}>firstname </th>
+					      <td className={styles.cardText}>{props.firstname}</td>
 					    </tr>
 					    <tr>
-					     <th>lastname</th>
-					      <td>{props.lastname}</td>
+					     <th className={styles.cardHeading}>lastname</th>
+					      <td className={styles.cardText}>{props.lastname}</td>
 					    </tr>
 					     <tr>
-					     <th>job</th>
-					     <td>{props.job} </td>
+					     <th className={styles.cardHeading}>job</th>
+					     <td className={styles.cardText}>{props.job} </td>
 					    </tr>
 					  </tbody>
 					</Table>
 					</div>
-			    <Button variant="primary"> Get details </Button>
+			    <Button className={styles.buttonText} variant="primary"> Get details </Button>
 			  </Card.Body>
 			</Card>
 		)
