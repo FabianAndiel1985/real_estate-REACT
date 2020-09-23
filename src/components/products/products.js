@@ -12,15 +12,15 @@ class Products extends React.Component {
     this.state = {
             products: 
             [
-              {id:"0",name:"product0",price:4.99},
-              {id:"1",name:"product1",price:7.99},
-              {id:"2",name:"product2",price:3.99},
-              {id:"3",name:"product3",price:7.20},
-              {id:"4",name:"product4",price:4.99},
-              {id:"5",name:"product5",price:1.39},
-              {id:"6",name:"product6",price:4.99},
-              {id:"7",name:"product7",price:2.99},
-              {id:"8",name:"product8",price:4.99},
+              {id:"0",name:"estate0",price:4.99},
+              {id:"1",name:"estate1",price:7.99},
+              {id:"2",name:"estate2",price:3.99},
+              {id:"3",name:"estate3",price:7.20},
+              {id:"4",name:"estate4",price:4.99},
+              {id:"5",name:"estate5",price:1.39},
+              {id:"6",name:"estate6",price:4.99},
+              {id:"7",name:"estate7",price:2.99},
+              {id:"8",name:"estate8",price:4.99},
 
             ],
         }

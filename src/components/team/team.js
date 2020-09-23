@@ -53,7 +53,7 @@ class Team extends Component {
             <sub className={styles.sub}> as of {this.date} </sub>
 
 
-        		<Container className="mt-5" fluid style={{ padding: " 0 10% 0 10%" }}>
+        		<Container className="my-5" fluid style={{ padding: " 0 10% 0 10%" }}>
         		<Row>
        			{this.state.teamMembers ? this.state.teamMembers.map(
        				(item,index)=>{

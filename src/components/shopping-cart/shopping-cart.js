@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Table} from 'react-bootstrap';
 import {reduceProduct} from '../../actions/actions';
+import {Container} from 'react-bootstrap';
+import styles from './shopping-cart.module.css';
 
 class ShoppingCart extends React.Component {
 
@@ -20,16 +22,18 @@ class ShoppingCart extends React.Component {
      :null ;
     
     return (
-    	<div>
-    	<h1>Your purchases </h1>
-    	<Table>
+    	<Container className="pt-5">
+
+    	<h1 className="mb-5">Your purchases </h1>
+
+    	<Table className="mb-5">
         <thead>
           <tr>
-            <th>number</th>
-            <th>product</th>
-            <th>price </th>
-            <th>amount</th>
-            <th>action</th>
+            <th className={styles.tableHeading}>number</th>
+            <th className={styles.tableHeading}>product</th>
+            <th className={styles.tableHeading}>price </th>
+            <th className={styles.tableHeading}>amount</th>
+            <th className={styles.tableHeading}>action</th>
           </tr>
         </thead>
         <tbody>
@@ -37,11 +41,11 @@ class ShoppingCart extends React.Component {
                (item,index)=>{
                  return (
                  <tr key={item.id}>
-                  <td>{item.id}</td>
-                  <td>{item.name}</td>
-                  <td>{item.price}</td>
-                  <td>{item.amount}</td>
-                  <td><button onClick={(event)=>this.props.onClick(event)}> Reduce amount</button></td>
+                  <td className={styles.tableText}>{item.id}</td>
+                  <td className={styles.tableText}>{item.name}</td>
+                  <td className={styles.tableText}>{item.price}</td>
+                  <td className={styles.tableText}>{item.amount}</td>
+                  <td className={styles.tableText}><button onClick={(event)=>this.props.onClick(event)}> Reduce amount</button></td>
                 </tr>
                 )           
                 }  
@@ -50,8 +54,8 @@ class ShoppingCart extends React.Component {
           
         </tbody>
       </Table> 
-      <p> Your total is: {totalAmount}</p>
-      </div>
+      <p className={styles.tableHeading}> Your total is: {totalAmount}</p>
+      </Container>
     	);
   }
 }
