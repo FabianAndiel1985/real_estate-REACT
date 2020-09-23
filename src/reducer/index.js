@@ -8,7 +8,7 @@ let initialState = [];
 
 function counter(state = initialState, action) {
 
-    if (action.type == "INCREMENT") {
+    if (action.type == "ADD") {
 
         let newPurchases = null;
 

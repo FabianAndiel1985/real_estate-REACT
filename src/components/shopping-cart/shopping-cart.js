@@ -12,8 +12,7 @@ class ShoppingCart extends React.Component {
        for(let i=0;i<array.length;i++){
          totalPrice += array[i].price;
        }
-       console.log(totalPrice);
-       return totalPrice;
+       return totalPrice.toFixed(2);
     }
 
     const totalAmount = this.props.products != null ? 
