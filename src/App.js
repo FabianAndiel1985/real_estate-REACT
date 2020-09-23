@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styles from './App.module.css';
 import welcomePic from './assets/images/welcomePic.jpg';
-import {Image,Modal,InputGroup,FormControl,Button} from 'react-bootstrap';
+
 import {Container} from 'react-bootstrap';
 import {getTime, 
         getDaytimeString, 
@@ -13,6 +13,7 @@ import {getTime,
         setUsernameRef,
         setPasswordRef
       } from './app-helper-functions';
+import Modal from './components/modal/modal';
 
 class App extends Component {
 
@@ -32,6 +33,7 @@ class App extends Component {
     this.getGreeting=getGreeting;
     this.onFocus = onFocus;
     this.onBlur = onBlur;
+    this.Modal = Modal;
   }
 
   
@@ -55,50 +57,7 @@ class App extends Component {
            </a>
         </p>
 
-
-       <Modal
-        size="lg"
-        show={this.state.lgShow}
-        onHide={() => this.setLgShow()}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg">
-           Login Data
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-
-          <label htmlFor="username"> Username</label>
-          <InputGroup className="mb-3">
-            <FormControl
-              aria-label="Default"
-              aria-describedby="inputGroup-sizing-default"
-              id="username"
-              ref={this.setUsernameRef}
-              onFocus = {()=>this.onFocus(this.username)}
-              onBlur= {()=>this.onBlur(this.username) }
-            />
-          </InputGroup>
-
-
-          <label htmlFor="password"> Password</label>
-          <InputGroup className="mb-3">
-            <FormControl
-              aria-label="Default"
-              aria-describedby="inputGroup-sizing-default"
-              type="password"
-              id="password"
-              ref={this.setPasswordRef}
-              onFocus = {()=>this.onFocus(this.password)}
-              onBlur= {()=>this.onBlur(this.password)}
-            />
-          </InputGroup>
-
-          <Button onClick={() => this.setLgShow()} variant="success">Login</Button>
-
-        </Modal.Body>
-      </Modal>
+        {this.state.lgShow ?  <Modal/>: null}
       </Container>
     );
   }
