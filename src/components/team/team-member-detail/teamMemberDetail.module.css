@@ -8,17 +8,15 @@
 }
 
 
+.carfHeading,.cardText, .buttonText {
+	font-size: 1.4rem !important;
+}
+
 .cardHeading {
-	font-size: 1.4rem;
 	font-family: 'Lato', sans-serif;
 }
 
-.cardText {
-	font-size: 1.4rem;
+.cardText,.button-text {
 	font-family: 'Raleway', sans-serif;
-}
 
-.buttonText {
-	font-size: 1.4rem !important;
-	font-family: 'Raleway', sans-serif;
 }
