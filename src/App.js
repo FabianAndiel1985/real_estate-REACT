@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import classes from './App.module.css';
+import styles from './App.module.css';
 import welcomePic from './assets/images/welcomePic.jpg';
 import {Image,Modal,InputGroup,FormControl,Button} from 'react-bootstrap';
-
+import {Container} from 'react-bootstrap';
 
 
 class App extends Component {
@@ -88,10 +88,15 @@ class App extends Component {
   render() {
    
     return ( 
-      <div>
+      <Container className="mt-4">
         <h1 style={{'color': this.getFontColour()}}  className="text-center"> Good {this.state.daytime} </h1>
-        <img src={require("./assets/images/welcomePic.jpg")}/>
-        <a onClick={() => this.setLgShow()} className={classes.adminLogin}>Login as an Administrator</a>
+        <h1>Welcome to Fabian Andiel Real</h1>
+        <img className="mt-5" src={require("./assets/images/welcomePic.jpg")}/>
+        <p className="mt-3 mb-5">
+          <a onClick={() => this.setLgShow()} className={styles.adminLogin}>
+            Login as an Administrator
+           </a>
+        </p>
 
        <Modal
         size="lg"
@@ -136,7 +141,7 @@ class App extends Component {
 
         </Modal.Body>
       </Modal>
-      </div>
+      </Container>
     );
   }
 }
