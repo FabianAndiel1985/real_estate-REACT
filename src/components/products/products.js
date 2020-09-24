@@ -4,6 +4,7 @@ import {addProduct} from '../../actions/actions';
 import {Table} from 'react-bootstrap';
 import {Container, Row, Col} from 'react-bootstrap';
 import styles from './products.module.css';
+import axios from 'axios';
 
 class Products extends React.Component {
 	
@@ -20,10 +21,22 @@ class Products extends React.Component {
               {id:"5",name:"estate5",price:1.39},
               {id:"6",name:"estate6",price:4.99},
               {id:"7",name:"estate7",price:2.99},
-              {id:"8",name:"estate8",price:4.99},
+              {id:"8",name:"estate8",price:4.99}
 
             ],
         }
+    }
+
+    componentDidMount() {
+
+     axios.get('http://localhost:8080/backend1/hi.php').then((response) => {
+           console.log(response);
+        
+        })
+        .catch((error) => {
+            console.log(error.message);
+        });
+    
     }
 
    
