@@ -11,27 +11,16 @@ class Products extends React.Component {
   constructor(props){
 		super(props);
     this.state = {
-            products: 
-            [
-              {id:"0",name:"estate0",price:4.99},
-              {id:"1",name:"estate1",price:7.99},
-              {id:"2",name:"estate2",price:3.99},
-              {id:"3",name:"estate3",price:7.20},
-              {id:"4",name:"estate4",price:4.99},
-              {id:"5",name:"estate5",price:1.39},
-              {id:"6",name:"estate6",price:4.99},
-              {id:"7",name:"estate7",price:2.99},
-              {id:"8",name:"estate8",price:4.99}
-
-            ],
+            products: null
         }
     }
 
     componentDidMount() {
 
      axios.get('http://localhost:8080/realEstateBackend/index.php').then((response) => {
-           console.log(response);
-        
+             this.setState({
+                products: response.data
+            });
         })
         .catch((error) => {
             console.log(error.message);
@@ -55,7 +44,7 @@ class Products extends React.Component {
             </tr>
           </thead>
           <tbody>
-          {this.state.products ? this.state.products.map(
+          {this.state.products != null ? this.state.products.map(
                  (item,index)=>{
                    return (
                    <tr key={item.id}>
