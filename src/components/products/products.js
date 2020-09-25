@@ -29,7 +29,7 @@ class Products extends React.Component {
 
     componentDidMount() {
 
-     axios.get('http://localhost:8080/backend1/hi.php').then((response) => {
+     axios.get('http://localhost:8080/realEstateBackend/index.php').then((response) => {
            console.log(response);
         
         })
