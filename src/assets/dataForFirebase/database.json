@@ -1,7 +1,6 @@
 {
 	"team":{
 		"m1":{
-			"id":"1",
 			"firstname":"Tom",
 			"lastname":"Gutierrez",
 			"age":"39",
@@ -10,7 +9,6 @@
 			"image":"employee1.jpg"
 		},
 		"m2":{
-			"id":"2",
 			"firstname":"Linda",
 			"lastname":"Miles",
 			"age":"30",
@@ -19,7 +17,6 @@
 			"image":"employee2.jpg"
 		},
 		"m3":{
-			"id":"3",
 			"firstname":"Ross",
 			"lastname":"Brown",
 			"age":"20",
@@ -28,7 +25,6 @@
 			"image":"employee3.jpg"
 		},
 		"m4":{
-			"id":"4",
 			"firstname":"Tom",
 			"lastname":"Gutierrez",
 			"age":"39",
@@ -37,7 +33,6 @@
 			"image":"employee4.jpg"
 		},
 		"m5":{
-			"id":"5",
 			"firstname":"Linda",
 			"lastname":"Miles",
 			"age":"30",
@@ -46,7 +41,6 @@
 			"image":"employee5.jpg"
 		},
 		"m6":{
-			"id":"6",
 			"firstname":"Ross",
 			"lastname":"Brown",
 			"age":"20",
@@ -55,7 +49,6 @@
 			"image":"employee6.jpg"
 		},
 		"m7":{
-			"id":"7",
 			"firstname":"Tom",
 			"lastname":"Gutierrez",
 			"age":"39",
@@ -64,7 +57,6 @@
 			"image":"employee7.jpg"
 		},
 		"m8":{
-			"id":"8",
 			"firstname":"Tom",
 			"lastname":"Gutierrez",
 			"age":"39",
@@ -73,7 +65,6 @@
 			"image":"employee8.jpg"
 		},
 		"m9":{
-			"id":"9",
 			"firstname":"Tom",
 			"lastname":"Gutierrez",
 			"age":"39",
