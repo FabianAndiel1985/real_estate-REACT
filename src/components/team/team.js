@@ -20,16 +20,9 @@ class Team extends Component {
     }
 
     transformResponseToObjectArray(response) {
-        let teamMembers = [];
-        for (var key in response.data) {
-        	let object = {};
-        	object["id"] = key;
-        	for (var key2 in response.data[key]) {	
-        		object[key2] = response.data[key][key2];
-        	}
-        	teamMembers.push(object);
-        }
-        return teamMembers;
+        const{e1,e2,e3,e4,e5,e6,e7,e8,e9} = response.data;
+
+        return [e1,e2,e3,e4,e5,e6,e7,e8,e9];
     }
 
     componentDidMount() {

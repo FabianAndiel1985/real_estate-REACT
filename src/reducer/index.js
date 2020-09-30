@@ -26,10 +26,7 @@ function counter(state = initialState, action) {
 
 
     if (action.type == "DECREMENT") {
-        console.log("hallo");
-        console.log(action.product.id);
         state.forEach((item, index) => {
-            console.log(item.id);
             if (item.id == action.product.id) {              
                 decreaseOrRemoveProduct(state, item, action, index);
             }
