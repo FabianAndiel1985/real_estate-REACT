@@ -8,6 +8,7 @@ function autoLoad($classname) {
   if($classname =='Controller') {
     require './View.php';
     require './Model.php';
+    require './DatabaseService.php';
     require './controller.php';
   }
 

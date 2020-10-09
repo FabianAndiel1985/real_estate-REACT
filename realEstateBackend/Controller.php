@@ -3,12 +3,16 @@
 class Controller {
 	function __construct() {
 		$this->view = new View();
-		$this->model = new DataModel();
+		$this->databaseService = new DatabaseService("realestate");
+
 	}
 
 	function route() {
-		$estates  = $this->model->getProducts();
-		$this->view->buildView($estates);
+		$sqlQuery = "Select * from estates"; 
+
+		$estatesArray = $this->databaseService->queryDatabase($sqlQuery);
+	
+		$this->view->buildView($estatesArray);
 	}
 
 }
