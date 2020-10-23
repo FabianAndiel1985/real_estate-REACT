@@ -11,7 +11,8 @@ import {getTime,
         onFocus,
         onBlur,
         setUsernameRef,
-        setPasswordRef
+        setPasswordRef,
+        handleChange
       } from './app-helper-functions';
 
 class App extends Component {
@@ -20,11 +21,15 @@ class App extends Component {
     super(props);
     this.state = {
       daytime:"morning",
-      lgShow:false
+      lgShow:false,
+      user: '',
+      email: '',
+      password: ''
     }
 
     this.setUsernameRef = setUsernameRef.bind(this);
     this.setPasswordRef = setPasswordRef.bind(this);
+    this.handleChange = handleChange.bind(this);
     this.getTime = getTime;
     this.getDaytimeString = getDaytimeString;
     this.getFontColour = getFontColour;
@@ -55,6 +60,8 @@ class App extends Component {
            </a>
         </p>
 
+        <Button onClick={() => console.log(this.state)}>Check Status</Button>
+
 
        <Modal
         size="lg"
@@ -69,12 +76,15 @@ class App extends Component {
         </Modal.Header>
         <Modal.Body>
 
-          <label htmlFor="username"> Username</label>
+          <label htmlFor="email"> Username</label>
           <InputGroup className="mb-3">
             <FormControl
               aria-label="Default"
               aria-describedby="inputGroup-sizing-default"
-              id="username"
+              type="email"
+              id="email"
+              name="email"
+              onChange= {(e)=> this.handleChange(e)}
               ref={this.setUsernameRef}
               onFocus = {()=>this.onFocus(this.username)}
               onBlur= {()=>this.onBlur(this.username) }
@@ -89,7 +99,9 @@ class App extends Component {
               aria-describedby="inputGroup-sizing-default"
               type="password"
               id="password"
+              name="password"
               ref={this.setPasswordRef}
+              onChange= {(e)=> this.handleChange(e)}
               onFocus = {()=>this.onFocus(this.password)}
               onBlur= {()=>this.onBlur(this.password)}
             />

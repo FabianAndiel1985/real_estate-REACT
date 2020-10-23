@@ -5,6 +5,11 @@ export function getGreeting() {
       })
   }
 
+  export function handleChange(element) {
+    const {name,value} = element.target;
+    this.setState({[name]:value});
+}
+
 export function getDaytimeString() {
 	if(18 >= this.getTime() && this.getTime() >= 12) {
        return "afternoon";
