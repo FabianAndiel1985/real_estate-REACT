@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import welcomePic from './assets/images/welcomePic.jpg';
 import {Image,Modal,InputGroup,FormControl,Button} from 'react-bootstrap';
 import {Container} from 'react-bootstrap';
+import { Redirect } from "react-router-dom";
 import {getTime, 
         getDaytimeString, 
         getFontColour,
@@ -10,10 +11,11 @@ import {getTime,
         getGreeting,
         onFocus,
         onBlur,
-        setUsernameRef,
-        setPasswordRef,
-        handleChange
+        handleChange,
+        authListener,
+        login
       } from './app-helper-functions';
+import fire from './config/fire';
 
 class App extends Component {
 
@@ -26,9 +28,8 @@ class App extends Component {
       email: '',
       password: ''
     }
-
-    this.setUsernameRef = setUsernameRef.bind(this);
-    this.setPasswordRef = setPasswordRef.bind(this);
+    
+    this.authListener = authListener.bind(this);
     this.handleChange = handleChange.bind(this);
     this.getTime = getTime;
     this.getDaytimeString = getDaytimeString;
@@ -37,12 +38,16 @@ class App extends Component {
     this.getGreeting=getGreeting;
     this.onFocus = onFocus;
     this.onBlur = onBlur;
+    this.login = login;
   }
 
   
   componentDidMount() {
-    this.getGreeting();
+        this.getGreeting();
+        this.authListener();
   }
+
+
 
   render() {
    
@@ -85,9 +90,8 @@ class App extends Component {
               id="email"
               name="email"
               onChange= {(e)=> this.handleChange(e)}
-              ref={this.setUsernameRef}
-              onFocus = {()=>this.onFocus(this.username)}
-              onBlur= {()=>this.onBlur(this.username) }
+              onFocus = {(e)=>this.onFocus(e)}
+              onBlur= {(e)=>this.onBlur(e) }
             />
           </InputGroup>
 
@@ -100,17 +104,17 @@ class App extends Component {
               type="password"
               id="password"
               name="password"
-              ref={this.setPasswordRef}
               onChange= {(e)=> this.handleChange(e)}
-              onFocus = {()=>this.onFocus(this.password)}
-              onBlur= {()=>this.onBlur(this.password)}
+              onFocus = {(e)=>this.onFocus(e)}
+              onBlur= {(e)=>this.onBlur(e)}
             />
           </InputGroup>
 
-          <Button onClick={() => this.setLgShow()} variant="success">Login</Button>
+          <Button onClick={(e)=>this.login(e)} variant="success">Login</Button>
 
         </Modal.Body>
       </Modal>
+      // {this.state.user ? <Redirect to="c1"/> : null } 
       </Container>
     );
   }

@@ -1,3 +1,26 @@
+ import fire from './config/fire';
+
+  export function login(e) {
+        e.preventDefault();
+        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {console.log(u)}).catch((error) => {
+            console.log(error);
+        });
+    }
+
+ export function authListener() {
+        fire.auth().onAuthStateChanged((user) => {
+            if (user) {
+                this.setState({ user });
+                localStorage.setItem('user', user.uid);
+            } else {
+                this.setState({ user: null });
+                localStorage.removeItem('user');
+            }
+        });
+    }
+
+
+
 export function getGreeting() {
     let daytime = this.getDaytimeString();
     this.setState({
@@ -53,18 +76,9 @@ export function setLgShow() {
   }
 
 export function  onFocus(element) {
-    element.style.border = "3px solid green";
+    element.target.style.border = "3px solid green";
   }
 
 export function onBlur(element) {
-    element.style.border = "";
+    element.target.style.border = "";
   }
-
-export function setUsernameRef(element) {
-      this.username = element;
-    }
-
-export function setPasswordRef(element)  {
-      this.password = element;
-    }
-
