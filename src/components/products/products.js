@@ -5,6 +5,7 @@ import {Table} from 'react-bootstrap';
 import {Container, Row, Col} from 'react-bootstrap';
 import styles from './products.module.css';
 import axios from 'axios';
+import { Redirect, withRouter } from "react-router-dom";
 
 class Products extends React.Component {
 	
@@ -13,6 +14,8 @@ class Products extends React.Component {
     this.state = {
             products: null
         }
+
+    this.addProduct = this.addProduct.bind(this);
     }
 
     componentDidMount() {
@@ -25,7 +28,11 @@ class Products extends React.Component {
         .catch((error) => {
             console.log(error.message);
         });
-    
+    }
+
+    addProduct() {
+      console.log("Hallo");
+      // this.history.push("/login");
     }
 
    
@@ -60,6 +67,10 @@ class Products extends React.Component {
             
           </tbody>
         </Table>
+         {localStorage.getItem("user") ? 
+         <button onClick={this.addProduct()}> add Products</button>
+         : null
+       }
     	</Container>);
   }
 }

@@ -22,6 +22,15 @@ function Navigation(props) {
         <NavDropdown.Item href="#shopping-cart" >shopping cart</NavDropdown.Item>
         <NavDropdown.Item href="#products">products</NavDropdown.Item>
       </NavDropdown>
+
+       {localStorage.getItem("user") ? 
+       <div className={styles.logout}>
+	         <Nav.Link href="#team" >
+	         	Logout
+	         </Nav.Link>
+         </div>
+         : null
+       }
 	    </Nav>
 	  </Navbar.Collapse>
 	</Navbar>

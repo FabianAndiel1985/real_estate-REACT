@@ -65,9 +65,6 @@ class App extends Component {
            </a>
         </p>
 
-        <Button onClick={() => console.log(this.state)}>Check Status</Button>
-
-
        <Modal
         size="lg"
         show={this.state.lgShow}
@@ -114,7 +111,7 @@ class App extends Component {
 
         </Modal.Body>
       </Modal>
-      // {this.state.user ? <Redirect to="c1"/> : null } 
+      {this.state.user ? <Redirect to="/products"/> : null } 
       </Container>
     );
   }
