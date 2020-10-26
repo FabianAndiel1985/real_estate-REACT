@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -7,9 +7,17 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import styles from './navigation.module.css';
+import fire from '../../config/fire';
 
 
 function Navigation(props) {
+	
+	function logout() {
+		fire.auth().signOut();
+		props.history.push("/");
+	}
+
+
     return (
         <Navbar bg="light" expand="lg">
 	  <Navbar.Brand href=""><img className={styles.navBrand} src={require("../../assets/images/logo.png")}/> </Navbar.Brand>
@@ -25,7 +33,7 @@ function Navigation(props) {
 
        {localStorage.getItem("user") ? 
        <div className={styles.logout}>
-	         <Nav.Link href="#team" >
+	         <Nav.Link href="#team" onClick={logout}>
 	         	Logout
 	         </Nav.Link>
          </div>
@@ -37,4 +45,4 @@ function Navigation(props) {
     )
 }
 
-export default Navigation;
+export default withRouter(Navigation);

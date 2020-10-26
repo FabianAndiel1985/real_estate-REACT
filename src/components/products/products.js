@@ -86,4 +86,4 @@ null;
 
 let Products2 = connect(mapStateToProps,mapDispatchToProps)(Products);
 
-export default Products2;
+export default withRouter(Products2);

@@ -16,7 +16,8 @@ import ShoppingCart from './components/shopping-cart/shopping-cart';
 import counter from './reducer/index';
 import {Provider} from 'react-redux';
 import { createStore } from 'redux';
-
+import ProtectedRoute from './components/higher-order-component/protectedRoute';
+import AddProduct from './components/admin/addProducts/addProducts';
 
 axios.defaults.baseURL = 'https://realestate-ec9a6.firebaseio.com/';
 
@@ -36,6 +37,7 @@ ReactDOM.render(
 		    <Route path="/products" component={Products}/>
 		    <Route path="/shopping-cart" component={ShoppingCart}/>
 	    </Provider>
+	     <ProtectedRoute path="/add-product" component={AddProduct}/>
 	    <Route component={PageNotFound}/>
 	  </Switch>
    <Footer creator="Fabian Andiel"/>

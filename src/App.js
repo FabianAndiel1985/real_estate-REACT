@@ -17,6 +17,7 @@ import {getTime,
       } from './app-helper-functions';
 import fire from './config/fire';
 
+
 class App extends Component {
 
   constructor(props){
