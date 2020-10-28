@@ -13,8 +13,10 @@ import fire from '../../config/fire';
 function Navigation(props) {
 	
 	function logout() {
-		fire.auth().signOut();
-		props.history.push("/");
+		fire.auth().signOut().then((u)=> {
+			localStorage.removeItem("user");
+			props.history.push("/");
+		})		
 	}
 
 
@@ -33,7 +35,7 @@ function Navigation(props) {
 
        {localStorage.getItem("user") ? 
        <div className={styles.logout}>
-	         <Nav.Link href="#team" onClick={logout}>
+	         <Nav.Link onClick={logout}>
 	         	Logout
 	         </Nav.Link>
          </div>

@@ -2,7 +2,7 @@
 
   export function login(e) {
         e.preventDefault();
-        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {console.log(u)}).catch((error) => {
+        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {console.log(u);localStorage.setItem("user", u)}).catch((error) => {
             console.log(error);
         });
     }
